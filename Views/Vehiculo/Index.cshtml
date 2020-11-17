@@ -1,0 +1,54 @@
+﻿@model IEnumerable<NETCOREM3_CodeFirst.Models.Vehiculo>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.vehiculoPlaca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vehiculoMarca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vehiculoModelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vehiculoFecha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.vehiculoPlaca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vehiculoMarca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vehiculoModelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vehiculoFecha)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.vehiculoID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.vehiculoID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.vehiculoID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

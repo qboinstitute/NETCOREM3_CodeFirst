@@ -1,0 +1,48 @@
+﻿@model NETCOREM3_CodeFirst.Models.Vehiculo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Vehiculo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="vehiculoPlaca" class="control-label"></label>
+                <input asp-for="vehiculoPlaca" class="form-control" />
+                <span asp-validation-for="vehiculoPlaca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vehiculoMarca" class="control-label"></label>
+                <input asp-for="vehiculoMarca" class="form-control" />
+                <span asp-validation-for="vehiculoMarca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vehiculoModelo" class="control-label"></label>
+                <input asp-for="vehiculoModelo" class="form-control" />
+                <span asp-validation-for="vehiculoModelo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vehiculoFecha" class="control-label"></label>
+                <input asp-for="vehiculoFecha" class="form-control" />
+                <span asp-validation-for="vehiculoFecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
